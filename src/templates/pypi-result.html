@@ -7,9 +7,10 @@
             <div class="my-1 float-left">
                 <a class="btn btn-primary" href="/" role="button">← Go Back</a>
             </div>
-            {#            <div class="my-1 float-right">#}
-            {#                <a class="btn btn-danger" role="button" id="pdf"><i class="fas fa-file-pdf fa-2x"></i></a>#}
-            {#            </div>#}
+            <div class="my-1 float-right">
+                Generated in {{ time | string | truncate(7, True, '') }} seconds
+
+            </div>
         </div>
         <table class="table table-bordered table-striped" id="content">
             <thead class="thead-dark">

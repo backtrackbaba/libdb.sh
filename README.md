@@ -7,3 +7,9 @@ Check out the application at [Libdb.sh](https://libdb.sh)
 - Python
 - Flask
 - Redis
+- Gunicorn
+- Nginx
+
+## Steps to run locally
+To be updated soon
+

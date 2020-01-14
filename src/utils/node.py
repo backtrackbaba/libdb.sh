@@ -1,12 +1,15 @@
+import os
+
 import requests
 from walrus import Database
 
-from src.utils.parsers.package_parser import PackageParser
+from utils.parsers.package_parser import PackageParser
 
 base_url = "https://replicate.npmjs.com"
 
-db = Database(host="localhost", port=6379, db=50,
-              password="greyatom")
+db = Database(host=os.environ.get('REDIS_HOST'), port=os.environ.get('REDIS_PORT'), db=os.environ.get('REDIS_DB'),
+              password=os.environ.get('REDIS_PASSWORD'))
+
 cache = db.cache()
 
 WEEKS_IN_SECONDS = 60 * 60 * 24 * 7

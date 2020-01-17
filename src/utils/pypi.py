@@ -33,4 +33,17 @@ class PypiUtil:
     def fetch_lib(self, name: str):
         url = f"{base_url}/{name}/json"
         r = requests.get(url)
-        return r.json()
+        lib_data = r.json()
+        required_data = self._prepare_lib_data(lib_data)
+        return required_data
+
+    def _prepare_lib_data(self, lib: dict):
+        required_data = {}
+        required_data.update({
+            'url': lib['info']['home_page'],
+            'name': lib['info']['name'],
+            'summary': lib['info']['summary'],
+            'version': lib['info']['version'],
+            'license': lib['info']['license'],
+        })
+        return required_data

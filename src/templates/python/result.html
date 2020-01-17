@@ -9,7 +9,6 @@
             </div>
             <div class="my-1 float-right">
                 Generated in {{ time | string | truncate(7, True, '') }} seconds
-
             </div>
         </div>
         <table class="table table-bordered table-striped" id="content">
@@ -26,10 +25,10 @@
             {% for key, value in data.items() %}
                 <tr>
                     <th scope="row">{{ loop.index }}</th>
-                    <td><a href="{{ value['info']['home_page'] }}" target="_blank">{{ value['info']['name'] }}</a></td>
-                    <td>{{ value['info']['summary'] }} </td>
-                    <td>{{ value['info']['version'] }}</td>
-                    <td>{{ value['info']['license'] }}</td>
+                    <td><a href="{{ value['url'] }}" target="_blank">{{ value['name'] }}</a></td>
+                    <td>{{ value['summary'] }} </td>
+                    <td>{{ value['version'] }}</td>
+                    <td>{{ value['license'] }}</td>
                 </tr>
             {% endfor %}
             </tbody>

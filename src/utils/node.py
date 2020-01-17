@@ -33,4 +33,17 @@ class NodeUtil:
     def fetch_npm(self, name: str):
         url = f"{base_url}/{name}"
         r = requests.get(url)
-        return r.json()
+        lib_data = r.json()
+        required_data = self._prepare_lib_data(lib_data)
+        return required_data
+
+    def _prepare_lib_data(self, lib: dict):
+        required_data = {}
+        required_data.update({
+            'url': lib['homepage'],
+            'name': lib['name'],
+            'summary': lib['description'],
+            'version': lib['dist-tags']['latest'],
+            'license': lib['license'],
+        })
+        return required_data

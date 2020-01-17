@@ -26,9 +26,9 @@
             {% for key, value in data.items() %}
                 <tr>
                     <th scope="row">{{ loop.index }}</th>
-                    <td><a href="{{ value['homepage'] }}" target="_blank">{{ value['name'] }}</a></td>
-                    <td>{{ value['description'] }} </td>
-                    <td>{{ value['dist-tags']['latest'] }}</td>
+                    <td><a href="{{ value['url'] }}" target="_blank">{{ value['name'] }}</a></td>
+                    <td>{{ value['summary'] }} </td>
+                    <td>{{ value['version'] }}</td>
                     <td>{{ value['license'] }}</td>
                 </tr>
             {% endfor %}

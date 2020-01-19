@@ -22,7 +22,7 @@ def python():
     return render_template('python/python.html')
 
 
-@app.route('/python/results', methods=["POST"])
+@app.route('/python/results', methods=["GET", "POST"])
 def python_results():
     if request.method == "GET":
         return redirect('/')

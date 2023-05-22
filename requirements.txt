@@ -1,5 +1,5 @@
 requirements-parser==0.2.0
-requests==2.22.0
+requests==2.31.0
 flask==1.1.1
 walrus==0.8.0
 gunicorn[gthread]==20.0.4
